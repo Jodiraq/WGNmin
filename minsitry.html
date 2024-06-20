@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WGN Alliance Fundraising Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 20px;
+            font-family: 'Lemon Milk', sans-serif;
+            font-size: 36px;
+        }
+        section {
+            margin: 20px;
+        }
+        .plan-details {
+            color: #F11853;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            text-align: left;
+            padding: 10px;
+            display: none;
+            border: 1px solid #F11853;
+            margin-top: 10px;
+        }
+        .dropdown {
+            margin: 20px 0;
+            font-size: 24px;
+            border: 1px solid #000000;
+            padding: 10px;
+            cursor: pointer;
+            display: inline-block;
+            width: 80%;
+            font-family: 'Lemon Milk', sans-serif;
+            animation: wiggle 0.5s ease-in-out;
+        }
+        .dropdown:hover {
+            background-color: #F11853;
+            color: #FFFFFF;
+        }
+        @keyframes wiggle {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(-5deg); }
+            75% { transform: rotate(3deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .clock-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .clock {
+            font-size: 20px;
+            font-family: 'Lemon Milk', sans-serif;
+        }
+        .pray-header {
+            font-family: 'Lemon Milk', sans-serif;
+            font-size: 28px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Pray for the Nations
+    </header>
+    <section class="clock-container">
+        <div class="clock">
+            <div>America</div>
+            <div id="clockAmerica"></div>
+        </div>
+        <div class="clock">
+            <div>Europe</div>
+            <div id="clockEurope"></div>
+        </div>
+        <div class="clock">
+            <div>Asia</div>
+            <div id="clockAsia"></div>
+        </div>
+        <div class="clock">
+            <div>Africa</div>
+            <div id="clockAfrica"></div>
+        </div>
+        <div class="clock">
+            <div>Australia</div>
+            <div id="clockAustralia"></div>
+        </div>
+    </section>
+    <section>
+        <div class="dropdown" onclick="toggleDropdown('budget')">Budget Goals</div>
+        <div id="budget" class="plan-details">
+            <p><b>Identify the total annual budget for:</b></p>
+            <ul>
+                <li><b>Missionaries:</b> $X - This covers travel, living expenses, and operational costs.</li>
+                <li><b>Prayer Houses:</b> $Y - This includes rent, utilities, and maintenance.</li>
+                <li><b>Social Media Campaigns:</b> $Z - Budget for advertising, content creation, and promotions.</li>
+                <li><b>Branding Updates:</b> $B - Costs for design, new materials, and website updates.</li>
+                <li><b>Operational Costs:</b> $A - General administrative expenses.</li>
+            </ul>
+            <p>Set monthly, quarterly, and annual fundraising goals based on these needs.</p>
+        </div>
+        
+        <div class="dropdown" onclick="toggleDropdown('socialMedia')">Social Media and Engagement</div>
+        <div id="socialMedia" class="plan-details">
+            <p><b>Share Stories:</b> Highlight the work of our missionaries and their needs with regular posts and video content.</p>
+            <p><b>Testimonies and Updates:</b> Provide frequent updates on the progress and impacts of our missions. Share testimonies of what God has been doing and what is in store.</p>
+            <p><b>Engagement:</b> Increase interaction with followers through Q&A sessions, live streams, and interactive posts on Facebook, Instagram, LinkedIn, and via emails. Step-by-step plan:
+                <ul>
+                    <li>Schedule regular posts sharing stories and testimonies.</li>
+                    <li>Organize Q&A sessions and live streams on social media platforms.</li>
+                    <li>Send monthly newsletters with event updates, donation links, and highlight specific prayer houses or ministries in need.</li>
+                </ul>
+            </p>
+            <p><b>Newsletter Sign-Up:</b> Encourage visitors to sign up for our newsletter with pop-ups and call-to-action buttons. The newsletter will feature:
+                <ul>
+                    <li>Monthly updates on events.</li>
+                    <li>Donation links.</li>
+                    <li>Highlights of specific prayer houses or ministries in need.</li>
+                    <li>Sharing testimonies and stories.</li>
+                </ul>
+            </p>
+        </div>
+        
+        <div class="dropdown" onclick="toggleDropdown('website')">Website Enhancements</div>
+        <div id="website" class="plan-details">
+            <p><b>"What Are We Up To" Page:</b> Create a dedicated page to regularly update current projects and progress.</p>
+            <p><b>Resources:</b> Offer valuable content that requires an email sign-up, including prayer resources and training materials. Once they sign up, market for donations and fundraise to those individuals.</p>
+            <p><b>Newsletter:</b> Integrate the newsletter as a resource on the website, providing updates, stories, and links for donations.</p>
+            <p><b>Missionary Training Materials:</b> Provide training resources for missionaries available upon sign-up.</p>
+        </div>
+        
+        <div class="dropdown" onclick="toggleDropdown('donor')">Donor Management System</div>
+        <div id="donor" class="plan-details">
+            <p><b>Implementation:</b> Set up a system to track donor information and preferences.</p>
+            <p><b>Targeted Giving:</b> Allow donors to choose specific projects to support, enhancing engagement and transparency.</p>
+        </div>
+        
+        <div class="dropdown" onclick="toggleDropdown('partnerships')">Partnerships</div>
+        <div id="partnerships" class="plan-details">
+            <p><b>Collaborate with Other Ministries:</b> Partner with other churches and Christian organizations to expand our reach.</p>
+            <p><b>Shared Promotions:</b> Work with partners to mutually share events and fundraising campaigns with a broader audience.</p>
+        </div>
+        
+        <div class="dropdown" onclick="toggleDropdown('webinars')">Online Prayer Webinars</div>
+        <div id="webinars" class="plan-details">
+            <p><b>Interactive Sessions:</b> Host regular online prayer meetings to bring together the community. Ensure each session has clear prayer topics so participants can prepare and engage meaningfully.</p>
+            <p><b>Donation Opportunities:</b> Include donation links during and after sessions to encourage giving.</p>
+        </div>
+        
+        <div class="dropdown" onclick="toggleDropdown('merchandise')">Merchandise</div>
+        <div id="merchandise" class="plan-details">
+            <p><b>Branded Products:</b> Design and sell items like t-shirts, sweatshirts, mugs, and prayer journals.</p>
+            <p><b>Revenue Sharing:</b> Ensure the ministry keeps a percentage of the profits to support our projects.</p>
+        </div>
+        
+        <div class="dropdown" onclick="toggleDropdown('grants')">Grants</div>
+        <div id="grants" class="plan-details">
+            <p><b>Research and Application:</b> Identify and apply for grants from Christian organizations and foundations.</p>
+        </div>
+        
+        <div class="dropdown" onclick="toggleDropdown('seo')">SEO Marketing</div>
+        <div id="seo" class="plan-details">
+            <p><b>Organic Traffic:</b> Implement SEO strategies to increase organic visitors to our website.</p>
+            <p><b>Email Capture
+            :</b> Use lead magnets to capture visitor information and grow our email list.</p>
+            <p><b>Fundraising Campaigns:</b> Directly market to our email list to encourage donations.</p>
+        </div>
+        
+        <div class="dropdown" onclick="toggleDropdown('branding')">Branding Update</div>
+        <div id="branding" class="plan-details">
+            <p><b>Modernization:</b> Refresh our logo, color scheme, and overall visual identity to be clean, modern, and relevant.</p>
+            <p><b>Consistency:</b> Ensure all marketing materials, website, and social media reflect the updated branding.</p>
+            <p><b>Recognition:</b> Establish a consistent brand presence so that when people see our name, they associate it with our mission and values.</p>
+        </div>
+    </section>
+    <script>
+        function toggleDropdown(id) {
+            const element = document.getElementById(id);
+            element.style.display = (element.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function updateClock() {
+            const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+
+            const americaTime = new Date().toLocaleTimeString([], { ...options, timeZone: 'America/New_York' });
+            document.getElementById('clockAmerica').innerText = americaTime;
+
+            const europeTime = new Date().toLocaleTimeString([], { ...options, timeZone: 'Europe/London' });
+            document.getElementById('clockEurope').innerText = europeTime;
+
+            const asiaTime = new Date().toLocaleTimeString([], { ...options, timeZone: 'Asia/Tokyo' });
+            document.getElementById('clockAsia').innerText = asiaTime;
+
+            const africaTime = new Date().toLocaleTimeString([], { ...options, timeZone: 'Africa/Johannesburg' });
+            document.getElementById('clockAfrica').innerText = africaTime;
+
+            const australiaTime = new Date().toLocaleTimeString([], { ...options, timeZone: 'Australia/Sydney' });
+            document.getElementById('clockAustralia').innerText = australiaTime;
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
